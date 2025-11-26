@@ -4,6 +4,11 @@ import ContactItem from "./ContactItem";
 
 const ContactList = () => {
   const [contactList, setContactList] = useState([]);
+  const handleDelete = (contactId) => {
+    setContactList((prevContacts) =>
+      prevContacts.filter((contact) => contact.id !== contactId)
+    );
+  };
 
   return (
     <div className="flex flex-col items-center gap-6 bg-slate-800 p-8 rounded-2xl shadow-2xl">
@@ -13,7 +18,11 @@ const ContactList = () => {
 
       <ul className="flex flex-col gap-3 mt-4">
         {contactList.map((contact) => (
-          <ContactItem key={contact.id} contact={contact} />
+          <ContactItem
+            key={contact.id}
+            contact={contact}
+            onDelete={handleDelete}
+          />
         ))}
       </ul>
     </div>

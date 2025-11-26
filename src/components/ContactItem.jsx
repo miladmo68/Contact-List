@@ -9,7 +9,7 @@ const ContactItem = ({ contact, onDelete }) => {
       </div>
 
       <button
-        // onClick={() => onDelete(contact.id)}
+        onClick={() => onDelete(contact.id)}
         className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:bg-red-600 active:scale-95 transition shadow"
       >
         Delete
